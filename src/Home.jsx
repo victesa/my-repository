@@ -33,7 +33,7 @@ const Home = () => {
     setResponseMessage("");
 
     try {
-      const response = await fetch("https://api.victorkirui.dev/api/data", {
+      const response = await fetch("https://api.victorkirui.dev/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
