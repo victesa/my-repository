@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo {
+    color: #FD6F00;
+    font-size: 28px; /* Reduced size to prevent overflow */
+    font-family: "Pacifico", serif;
+    padding: 0px;
+}
+
+
+.logo:hover{
+    color: #FD6F00;
+}
+
+/* Navbar Container */
+.navbar {
+    background-color: transparent;
+    position: relative;
+    height: 88px; /* Ensures it expands if needed */
+    display: flex;
+    padding: 5px 0px;
+    justify-content: center;
+}
+
+/* Navbar Layout */
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Navbar Text */
+.navBarText {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+    color: var(--title-color);
+    font-family: 'Caros', sans-serif;
+    text-decoration: none;
+}
+
+.navBarText:hover {
+    color: #8F8F8F;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+}
+
+
+/* Light mode (default) */
+.nav-links a {
+    color: black;  /* Light mode text color */
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+/* Dark mode */
+.dark .nav-links a {
+    color: white;  /* Dark mode text color */
+}
+
+
+.nav-links a:hover {
+    color: black;
+}
+
+.dark .nav-links a:hover {
+    color: white;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--background-color);
+        color: #FD6F00;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1;
+        padding: 0;
+    }
+
+    .navbar-container {
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: var(--background-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 16px;
+        border-bottom: 1px solid gray;
+    }
+}
+
